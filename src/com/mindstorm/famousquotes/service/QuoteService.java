@@ -21,7 +21,9 @@ public class QuoteService {
 	public Quote updateQuote(Quote q) throws Exception {
 		int index = quotes.indexOf(q);
 		if (index == -1) throw new Exception("Quote Record does not exist");
-		quotes.add(index,q);
+		Quote currentQuote = quotes.get(index);
+		currentQuote.setAuthor(q.getAuthor());
+		currentQuote.setMessage(q.getMessage());
 		return q;
 	}
 
