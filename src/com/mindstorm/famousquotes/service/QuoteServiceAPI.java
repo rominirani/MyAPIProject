@@ -30,8 +30,10 @@ public class QuoteServiceAPI {
 		int index = quotes.indexOf(q);
 		if (index == -1)
 			throw new NotFoundException("Quote Record does not exist");
-		quotes.add(index,q);
-		return q;
+		  Quote currentQuote = quotes.get(index);
+		  currentQuote.setAuthor(q.getAuthor());
+		  currentQuote.setMessage(q.getMessage());
+		  return q;
 	}
 
 	@ApiMethod(name="remove")

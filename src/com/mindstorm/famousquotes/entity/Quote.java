@@ -4,6 +4,9 @@ public class Quote {
 	Integer id;
 	String author;
 	String message;
+	
+	public Quote() {
+	}
 
 	public Quote(Integer id) {
 		super();
